@@ -7,6 +7,7 @@ import { Router } from "lucide-react";
 import { useRouter } from "next/navigation";
 import SearchInput from "../SearchInput";
 import { ModeToggle } from "../theme-toggle";
+import { NavMenu } from "./NavMenu";
 
 
 const Navbar = () => {
@@ -22,6 +23,7 @@ const Navbar = () => {
          <div className="flex items-center gap-4">
           <div className="">
             <ModeToggle />
+            <NavMenu />
           </div>
           <UserButton  afterSignOutUrl="/"/>
           {!userId && (
@@ -37,4 +39,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;
