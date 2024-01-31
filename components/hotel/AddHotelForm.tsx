@@ -71,26 +71,34 @@ const AddHotelForm = ({hotel}: AddHotelFormProps) => {
     <div>
      <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-      <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <h3 className="text-lg font-semibold text-slate-500">{hotel ? "Update your hotel" : "Describe your hotel"}</h3>
+      <div className="flex flex-col md:flex-row gap-6">
+        <div className="flex-1 flex flex-col gap-6">
+          <FormField
+              control={form.control}
+              name="title"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Hotel Title</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Beach Azure" {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    Provide your hotel name
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+        </div>
+        <div className="flex-1 flex flex-col gap-6">
+         
+        </div>
+      </div>  
       </form>
      </Form>
     </div>
   )
 }
 
-export default AddHotelForm
+export default AddHotelForm;
